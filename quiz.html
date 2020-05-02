@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+    <script src="quiz.js" defer></script>
+</head>
+<body>
+    <div class="card">
+        <section id="start">
+            <div id="start-button">
+                <button>Start Quiz</button>
+            </div>
+        </section>
+        <section id="questions" class="hide">
+            <div id="question-no__score">
+                <p id="question-no">Question <span id="question-number-value"></span> of <span id="total-number-of-question"></span></p>
+                <p>Score: <span id="score">0</span></p>
+            </div>
+            <div id="question__options">
+                <span id="question"></span>
+                <div id="options">
+                    <span id="option-0" class="option" onclick="check(this)"></span>
+                    <span id="option-1" class="option" onclick="check(this)"></span>
+                    <span id="option-2" class="option" onclick="check(this)"></span>
+                    <span id="option-3" class="option" onclick="check(this)"></span>
+                </div>
+                <div id="btns">
+                    <button id="reset">Reset</button>
+                    <button id="next">Next</button>
+                </div>
+            </div>
+        </section>
+        <section id="result" class="hide">
+            <h3>You got <span id="correct-answers"></span> out of <span id="total-score"></span> correct answers</h3>
+            <div id="percentage__score">
+                <span id="score-percentage"></span>
+            </div>
+            <div id="try-again">
+                <button>Try Again</button>
+            </div>
+        </section>
+    </div>    
+</body>
+</html>

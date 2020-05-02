@@ -1,0 +1,158 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    background-image: url(./img/quiz-bg.jpg);
+}
+.card {
+    width: 500px;
+    margin: 3rem auto;
+    background-color: #233B57;
+    padding: 2rem;
+    box-shadow: 0 0 7px 2px #233B57;
+    opacity: .9;
+}
+.card:hover {
+    opacity: 1;
+    box-shadow: none;
+}
+.hide {
+    display: none;
+}
+#start-button, #try-again {
+    width: 10rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+#start-button button, #try-again button {
+    padding: 1rem 2rem;
+    outline: none;
+    color: #233b57;
+    font-weight: 600;
+}
+#start-button button:hover, #try-again button:hover {
+    border: 1px solid #233B57;
+}
+#question-no__score {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #fff;
+    padding-bottom: .5rem;
+    color: #fff;
+}
+#question {
+    color: #fff;
+    font-size: 1.2rem;
+}
+#options {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+.disabled {
+    pointer-events: none;
+}
+.option {
+    background-color: #fff;
+    margin: .3rem;
+    padding: .5rem 1rem;
+    color: #233B57;
+    font-weight: 600;
+    cursor: pointer;
+}
+.option:hover {
+    cursor: pointer;
+}
+#btns {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+#reset, #next {
+    color: #233B57;
+    padding: .2rem 2rem;
+    outline: transparent;
+    display: block;
+    width: 8rem;
+}
+#reset:hover, #next:hover {
+    border: 1px solid #233B57;
+}
+#reset {
+    margin-right: .5rem;
+}
+#result h3 {
+    text-align: center;
+    color: #fff;
+}
+#percentage__score {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 4rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+@keyframes spin {
+    from {
+        transform: rotateZ(0deg);
+        border: 1px solid #fff;
+    }
+    to {
+        transform: rotateZ(360deg);
+        border: 1px solid grey;
+    }
+}
+.correct {
+    background-color: #018059;
+    color: #fff;
+    transition: 1s ease;
+}
+.wrong {
+    background-color: #990404;
+    color: #fff;
+    transition: 1s ease;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 560px) {
+    #options {
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 550px) {
+    .card {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 430px) {
+    #btns {
+        flex-direction: column;
+        align-items: center;
+    }
+    #reset {
+        margin-bottom: .5rem;
+        margin-right: 0;
+    }
+}
